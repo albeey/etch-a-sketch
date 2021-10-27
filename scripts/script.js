@@ -1,9 +1,10 @@
 // RUN FUNCTION ON PAGE LOAD
 document.addEventListener('DOMContentLoaded', generateGrid())
 
-const changeGridButton = document.querySelector(".change-grid");
-changeGridButton.addEventListener("click", resetGrid);
-
+const changeGrid = document.querySelectorAll(".change-grid");
+changeGrid.forEach(button => {
+  button.addEventListener("click", resetGrid);
+})
 
 function generateGrid(gridSize = 16) {
   const container = document.querySelector("#grid-container");
