@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', generateGrid())
 const changeGridButton = document.querySelector(".change-grid");
 changeGridButton.addEventListener("click", resetGrid);
 
-// FUNCTIONS
+
 function generateGrid(gridSize = 16) {
   const container = document.querySelector("#grid-container");
 
@@ -26,7 +26,7 @@ function generateGrid(gridSize = 16) {
 
   // Add event listener to cells
   const cells = document.querySelectorAll(".cell");
-    cells.forEach(cell => {
+  cells.forEach(cell => {
     cell.addEventListener("mouseenter", changeCellColor)
   })
 }

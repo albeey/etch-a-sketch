@@ -8,11 +8,42 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffeb7c;
+  background-color: #f6f4d2;
+  font-family: 'Merriweather', serif;
+}
+
+#header {
+  background-color: #d4e09b;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+}
+
+.title {
+  font-weight: 900;
+  font-family: 'Fira Sans', sans-serif;
+  letter-spacing: 3px;
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+#navigation {
+  margin: 20px 0;
+  display: flex;
+  width: 600px;
+  gap: 10px;
+  align-items: center;
+}
+
+.size {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 #grid-container {
-  border: 5px solid gray;
+  border: 5px solid #cbdfbd;
   width: 600px;
   height: 600px;
   display: flex;
@@ -47,4 +78,9 @@ input[type=number]::-webkit-inner-spin-button {
   border-radius: 3px;
   height: 27px;
   width: 90px;
+}
+
+label, button {
+  color: #6d6875;
+  font-weight: bold;
 }

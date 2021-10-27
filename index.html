@@ -3,14 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Etch-A-Sketch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css">
   <script src="scripts/script.js" defer></script>
 </head>
 <body>
 
+  <div id="header">
+    <p class="title">Etch-A-Sketch</p>
+  </div>
+
   <div id="navigation">
-    <label for="grid-size">Grid Size: </label>
-    <input type="number" id="grid-size" min="1" max="100" value="16">
+    <div class="size">
+      <label for="grid-size">Grid Size: </label>
+      <input type="number" id="grid-size" min="1" max="100" value="16">
+    </div>
     <button class="change-grid">Submit</button>
   </div>
 
