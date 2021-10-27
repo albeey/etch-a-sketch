@@ -26,14 +26,14 @@ cells.forEach(cell => {
 
 function changeCellColor() {
   if (!this.style.backgroundColor) {
+    this.style.filter = "brightness(100%)"
+    
     const bgColor = generateRGBcolor();
     this.style.backgroundColor = bgColor;
-
-    console.log(this.style.backgroundColor)
   } else {
-    this.style.border = "5px"
+    const filterNum = getNumericValues(this.style.filter);
+    if (filterNum > 0) this.style.filter = `brightness(${filterNum - 10}%)`;
   }
-
 }
 
 function generateRGBcolor() {
@@ -47,6 +47,10 @@ function generateRGBcolor() {
   return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`
 }
 
+function getNumericValues(string) {
+  const NUMS = "0123456789";
+  const lineToStrip = string.split("");
 
-
-
+  const numArr = lineToStrip.filter(char => NUMS.includes(char));
+  return +numArr.join("");
+}
