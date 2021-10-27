@@ -1,5 +1,14 @@
+// RUN FUNCTION ON PAGE LOAD
+document.addEventListener('DOMContentLoaded', generateGrid())
+
+const changeGridButton = document.querySelector(".change-grid");
+changeGridButton.addEventListener("click", resetGrid);
+
+// FUNCTIONS
 function generateGrid(gridSize = 16) {
   const container = document.querySelector("#grid-container");
+
+  container.innerHTML = "";
 
   for (let r = 0; r < gridSize; r++) {
     // Create row
@@ -14,25 +23,27 @@ function generateGrid(gridSize = 16) {
       row.appendChild(cell);
     }
   }
+
+  // Add event listener to cells
+  const cells = document.querySelectorAll(".cell");
+    cells.forEach(cell => {
+    cell.addEventListener("mouseenter", changeCellColor)
+  })
 }
 
-generateGrid()
+function resetGrid() {
+  const size = document.querySelector("#grid-size");
+  generateGrid(+size.value);
+}
 
-const cells = document.querySelectorAll(".cell");
-
-cells.forEach(cell => {
-  cell.addEventListener("mouseenter", changeCellColor)
-})
 
 function changeCellColor() {
   if (!this.style.backgroundColor) {
     this.style.filter = "brightness(100%)"
-    
-    const bgColor = generateRGBcolor();
-    this.style.backgroundColor = bgColor;
+    this.style.backgroundColor = generateRGBcolor();
   } else {
-    const filterNum = getNumericValues(this.style.filter);
-    if (filterNum > 0) this.style.filter = `brightness(${filterNum - 10}%)`;
+    const currentFilterVal = getNumericValues(this.style.filter);
+    if (currentFilterVal > 0) this.style.filter = `brightness(${currentFilterVal - 10}%)`;
   }
 }
 

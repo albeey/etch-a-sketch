@@ -5,7 +5,9 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-color: #ffeb7c;
 }
 
@@ -28,4 +30,21 @@ body {
 .cell {
   flex: 1;
   background-color: white;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  opacity: 1;
+}
+
+#grid-size {
+  padding: 4px;
+  height: 15px;
+}
+
+.change-grid {
+  padding: 4px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  height: 27px;
+  width: 90px;
 }
