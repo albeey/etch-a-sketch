@@ -34,9 +34,14 @@ function generateGrid(gridSize = 16) {
 
 function resetGrid() {
   const size = document.querySelector("#grid-size");
+
+  if (+size.value > 100) {
+    alert( "Grid size must be between 1 and 100." );
+    return;
+  }
+
   generateGrid(+size.value);
 }
-
 
 function changeCellColor() {
   if (!this.style.backgroundColor) {
